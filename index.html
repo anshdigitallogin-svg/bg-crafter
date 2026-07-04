@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BG Crafter - Free AI Background Remover | Remove Image Background Online</title>
+
+    <link rel="icon" type="image/png" href="assets/mylogo.png">
+
+    <meta name="description"
+content="Remove image backgrounds instantly with BG Crafter's free AI Background Remover. Fast, high-quality, secure and easy to use. Supports JPG, PNG and WEBP images.">
+
+<meta name="keywords"
+content="AI Background Remover, Remove Background, Free Background Remover, BG Crafter, Remove BG Online, Transparent PNG, Image Background Remover, AI Photo Editor">
+
+<meta name="author" content="BG Crafter">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#7C3AED">
+<meta http-equiv="Content-Language" content="en">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<div id="toast" class="toast">
+    ✅ Background removed successfully!
+</div>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="container">
+
+           <div class="logo">
+    <img src="assets/mylogo.png" alt="BG Crafter Logo">
+    <span>BG Crafter</span>
+</div>
+
+            <nav class="navbar">
+
+                <a href="#">Home</a>
+                <a href="#">Features</a>
+                <a href="#">Background Remover</a>
+                <a href="#">Pricing</a>
+                <a href="#">API</a>
+
+            </nav>
+
+            <button class="nav-btn">
+                Start Free
+            </button>
+
+        </div>
+
+    </header>
+
+    <!-- ================= HERO ================= -->
+
+    <!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="container hero-layout">
+
+        <!-- LEFT -->
+
+        <div class="hero-left">
+
+            <div class="badge">
+                ✨ AI Background Remover
+            </div>
+
+            <h1>
+                Remove Background
+                <span>In One Click.</span>
+            </h1>
+
+            <!-- Upload -->
+
+            <section class="upload-section">
+
+                <div class="upload-box" id="dropArea">
+
+                    <div class="upload-icon">
+                        ☁️
+                    </div>
+
+                    <h2>Upload Your Image</h2>
+
+                    <p>Drag & Drop image here</p>
+
+                    <button
+                        class="browse-btn"
+                        id="browseBtn"
+                        type="button">
+
+                        Browse Image
+
+                    </button>
+
+                    <input
+                        type="file"
+                        id="imageInput"
+                        accept="image/*"
+                        hidden>
+
+                    <div
+                        id="previewWrapper"
+                        class="preview-wrapper"
+                        style="display:none;">
+
+                        <button
+                            id="clearImageBtn"
+                            type="button">
+
+                            ✕
+
+                        </button>
+
+                        <img
+                            id="previewImage"
+                            alt="Preview">
+
+                    </div>
+
+                    <p id="uploadText">
+
+                        JPG • PNG • WEBP
+
+                        <br>
+
+                        Max 10MB
+
+                    </p>
+
+                    <div
+                        id="imageInfo"
+                        class="image-info"
+                        style="display:none;">
+
+                        <div><strong>Name:</strong> <span id="infoName"></span></div>
+
+                        <div><strong>Size:</strong> <span id="infoSize"></span></div>
+
+                        <div><strong>Resolution:</strong> <span id="infoResolution"></span></div>
+
+                        <div><strong>Format:</strong> <span id="infoFormat"></span></div>
+
+                    </div>
+
+                </div>
+
+                <div class="remove-area">
+
+                    <button
+                        id="removeBtn"
+                        class="remove-btn"
+                        type="button">
+
+                        Remove Background
+
+                    </button>
+
+                </div>
+
+                <div id="loader" style="display:none;">
+
+                    <div class="spinner"></div>
+
+                    <p id="progressText">
+                        Uploading Image...
+                    </p>
+
+                    <div class="progress-bar">
+
+                        <div id="progressFill"></div>
+
+                    </div>
+
+                    <div id="progressPercent">
+                        0%
+                    </div>
+
+                    <small id="loaderInfo">
+                        Please don't close or refresh this page.
+                    </small>
+
+                </div>
+
+            </section>
+
+        </div>
+
+        <!-- RIGHT -->
+
+        <div class="hero-image">
+
+            <img src="assets/heroimage.jpeg" alt="AI Background Remover">
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- ================= RESULT ================= -->
+
+    <section>
+
+        <div
+            class="result-box"
+            id="resultBox"
+            style="display:none;">
+
+            <h2>
+
+                Result
+
+            </h2>
+
+            <img
+    id="resultImage"
+    alt="Result">
+
+            <a
+                id="downloadBtn"
+                download="bg-crafter.png">
+
+                <button
+                    class="download-btn"
+                    type="button">
+
+                    Download PNG
+
+                </button>
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- ================= FAQ ================= -->
+
+<section class="faq-section">
+
+    <div class="container">
+
+        <h2 class="faq-title">
+            Frequently Asked Questions
+        </h2>
+
+        <div class="faq">
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    Is BG Crafter free to use?
+
+                    <span>+</span>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Yes. BG Crafter is completely free to use. Premium features may be introduced in the future.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    Which image formats are supported?
+
+                    <span>+</span>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        BG Crafter supports JPG, JPEG, PNG and WEBP images.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    What is the maximum upload size?
+
+                    <span>+</span>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        You can upload images up to 10 MB.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    How long does background removal take?
+
+                    <span>+</span>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Most images are processed within 10–30 seconds depending on image size.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    Will my image quality decrease?
+
+                    <span>+</span>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        No. BG Crafter preserves image quality as much as possible.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    Are my uploaded images stored?
+
+                    <span>+</span>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        No. Your uploaded images are not permanently stored after processing.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    Can I use BG Crafter on mobile?
+
+                    <span>+</span>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Yes. BG Crafter works on desktop, tablet and mobile devices.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    Do I need an account?
+
+                    <span>+</span>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        No. You can remove backgrounds without creating an account.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="container footer-center">
+
+        <span>© 2026 BG Crafter. All rights reserved.</span>
+
+        <a href="privacy.html">Privacy</a>
+
+<a href="terms.html">Terms</a>
+
+<a href="contact.html">Contact</a>
+    </div>
+
+</footer>
+
+
+    <script
+        type="module"
+        src="main.js">
+
+    </script>
+
+</body>
+
+</html>
